@@ -3,6 +3,7 @@
 > Mask sensitive data strings only expose certain parts
 
 [![npm version](https://img.shields.io/npm/v/maskify.svg)](https://www.npmjs.com/package/maskify)
+[![Build Status](https://travis-ci.org/andreruffert/maskify.svg?branch=master)](https://travis-ci.org/andreruffert/maskify)
 
 
 ## Install
