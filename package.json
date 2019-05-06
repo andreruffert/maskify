@@ -1,6 +1,6 @@
 {
   "name": "maskify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mask sensitive data strings and only expose certain parts",
   "license": "MIT",
   "repository": "andreruffert/maskify",
