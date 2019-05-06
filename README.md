@@ -1,6 +1,8 @@
 # maskify
 
-> Mask sensitive data strings only expose certain parts
+> Mask sensitive data strings and only expose certain parts
+
+Useful to mask credit card numbers, secret tokens or any other data.
 
 [![npm version](https://img.shields.io/npm/v/maskify.svg)](https://www.npmjs.com/package/maskify)
 [![Build Status](https://travis-ci.org/andreruffert/maskify.svg?branch=master)](https://travis-ci.org/andreruffert/maskify)
@@ -18,7 +20,6 @@ $ npm install maskify
 
 ```js
 import maskify from 'maskify';
-
 
 // Example to mask a standard credit card number
 maskify('4556-3646-0793-5616');
