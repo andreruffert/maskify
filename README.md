@@ -4,8 +4,8 @@
 
 Useful to mask credit card numbers, secret tokens or any other data.
 
+[![CI status](https://github.com/andreruffert/maskify/workflows/CI/badge.svg)](https://github.com/andreruffert/maskify/actions?workflow=CI)
 [![npm version](https://img.shields.io/npm/v/maskify.svg)](https://www.npmjs.com/package/maskify)
-[![Build Status](https://travis-ci.org/andreruffert/maskify.svg?branch=master)](https://travis-ci.org/andreruffert/maskify)
 
 
 ## Install
