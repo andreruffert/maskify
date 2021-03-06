@@ -2,11 +2,11 @@
 
 > Mask sensitive data strings and only expose certain parts
 
-Useful to mask credit card numbers, secret tokens or any other data.
-
 [![CI status](https://github.com/andreruffert/maskify/workflows/CI/badge.svg)](https://github.com/andreruffert/maskify/actions?workflow=CI)
 [![npm version](https://img.shields.io/npm/v/maskify.svg)](https://www.npmjs.com/package/maskify)
+[![npm downloads](https://img.shields.io/npm/dm/maskify?logo=npm)](https://www.npmjs.com/package/maskify)
 
+Useful to mask credit card numbers, secret tokens or any other data.
 
 ## Install
 
