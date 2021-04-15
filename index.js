@@ -12,10 +12,14 @@ function maskify(inputString = '', options = {}) {
   if (inputString.length < minChars) {
     return inputString;
   }
+  // only mask if visible chars at start and end are less chars than string length
+  if (inputString.length < visibleCharsStart + visibleCharsEnd) {
+    return inputString;
+  }
 
-  const startChars = inputString.charAt(visibleCharsStart - 1);
-  const endChars = inputString.slice(-visibleCharsEnd);
-  const charsToMask = inputString.slice(visibleCharsStart, -visibleCharsEnd);
+  const startChars = inputString.slice(0, visibleCharsStart);
+  const endChars = (visibleCharsEnd > 0) ? inputString.slice(-visibleCharsEnd) : '';
+  const charsToMask = (visibleCharsEnd > 0) ? inputString.slice(visibleCharsStart, -visibleCharsEnd) : inputString.slice(visibleCharsStart);
   const maskedChars = charsToMask.split('').map(char => {
     const output = matchPattern.test(char) ? maskSymbol : char;
     return output;
