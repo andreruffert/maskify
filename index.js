@@ -9,7 +9,7 @@ function maskify(inputString = '', options = {}) {
   } = options;
 
   // Skip e.g. short credit card numbers or empty strings
-  if (inputString.length < minChars) {
+  if (typeof inputString !== 'string' || inputString.length < minChars) {
     return inputString;
   }
   // only mask if visible chars at start and end are less chars than string length

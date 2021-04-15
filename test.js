@@ -20,6 +20,15 @@ test('should handle empty strings', t => {
   t.is(maskify(''), '');
 });
 
+test('should handle null and undefined strings', t => {
+  t.is(maskify(null), null);
+  t.is(maskify(), '');
+});
+
+test('should return non-strings unaltered', t => {
+  t.is(maskify(123), 123);
+});
+
 test('should handle to overwrite default options', t => {
   const alphanumericCharacters = /^[a-zA-Z0-9]+$/;
   t.is(maskify('AB616', {
