@@ -20,6 +20,15 @@ test('should handle empty strings', t => {
   t.is(maskify(''), '');
 });
 
+test('should handle null and undefined strings', t => {
+  t.is(maskify(null), null);
+  t.is(maskify(), '');
+});
+
+test('should return non-strings unaltered', t => {
+  t.is(maskify(123), 123);
+});
+
 test('should handle to overwrite default options', t => {
   const alphanumericCharacters = /^[a-zA-Z0-9]+$/;
   t.is(maskify('AB616', {
@@ -29,4 +38,20 @@ test('should handle to overwrite default options', t => {
     visibleCharsEnd: 3,
     minChars: 0
   }), '👮👮616');
+});
+
+test('should handle optional visibleCharsStart and visibleCharsEnd option', t => {
+  t.is(maskify('123456789', {visibleCharsStart: 3, visibleCharsEnd: 2}), '123####89');
+  t.is(maskify('123456789', {visibleCharsStart: 0, visibleCharsEnd: 0}), '#########');
+});
+
+test('should handle optional maskSymbol option', t => {
+  t.is(maskify('123456789', {maskSymbol: '*'}), '1****6789');
+});
+
+test('should handle optional minChars option', t => {
+  t.is(maskify('123', {minChars: 10}), '123', 'shorter string is not masked');
+  t.is(maskify('123', {minChars: 0, visibleCharsStart: 1, visibleCharsEnd: 1}), '1#3', 'string with minChars 0 is correctly masked');
+  t.is(maskify('', {minChars: 0, visibleCharsStart: 0, visibleCharsEnd: 0}), '', 'emtpy string with minChars 0 is correctly masked');
+  t.is(maskify('123', {minChars: 3}), '123', 'string shorter than visibleCharsStart + visibleCharsEnd is correctly masked');
 });
